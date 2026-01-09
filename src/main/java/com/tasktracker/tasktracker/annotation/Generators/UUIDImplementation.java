@@ -5,15 +5,16 @@ import org.hibernate.generator.BeforeExecutionGenerator;
 import org.hibernate.generator.EventType;
 
 import java.util.EnumSet;
+import java.util.UUID;
 
 public class UUIDImplementation implements BeforeExecutionGenerator {
     @Override
     public Object generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o, Object o1, EventType eventType) {
-        return null;
+        return UUID.randomUUID().toString();
     }
 
     @Override
     public EnumSet<EventType> getEventTypes() {
-        return null;
+        return EnumSet.of(EventType.INSERT);
     }
 }

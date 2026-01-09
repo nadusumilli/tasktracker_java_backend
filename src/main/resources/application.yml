@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: tasktracker
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tasktracker_db
+    username: task_user
+    password: Password1!
+
+  sql:
+    init:
+      data-locations: classpath:db/migration/init.sql
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.default_schema: tasktracker
+
+jwt:
+  secretKey: HASUDFHIOH34568734534hjh5ij34b5y34b5yu34b5asdfas8d9f7a8sdf
